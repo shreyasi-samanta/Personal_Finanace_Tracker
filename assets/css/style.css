@@ -1,0 +1,299 @@
+/* ----------------------------------------------------
+   Premium Fintech Design System Variables
+---------------------------------------------------- */
+:root {
+    --bg-main: #090d16;
+    --bg-card: #121824;
+    --bg-darker: #060910;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    
+    --color-emerald: #f3cf07;
+    --color-emerald-hover: #cad00c;
+    --color-emerald-glow: rgba(16, 185, 129, 0.15);
+    
+    --color-rose: #f43f5e;
+    --color-rose-hover: #e11d48;
+    --color-rose-glow: rgba(244, 63, 94, 0.15);
+    
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-primary-glow: rgba(59, 130, 246, 0.15);
+    
+    --color-violet: #8b5cf6;
+    --color-violet-hover: #7c3aed;
+    
+    --color-amber: #f59e0b;
+    --color-amber-hover: #d97706;
+    
+    --border-color: #1e293b;
+    --border-focus: #334155;
+    
+    --font-outfit: 'Outfit', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ----------------------------------------------------
+   Global Reset & Aesthetics
+---------------------------------------------------- */
+body {
+    background-color: var(--bg-main) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-outfit {
+    font-family: var(--font-outfit);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* ----------------------------------------------------
+   Custom Color Utilities & Glows
+---------------------------------------------------- */
+.bg-card {
+    background-color: var(--bg-card) !important;
+}
+.bg-main {
+    background-color: var(--bg-main) !important;
+}
+.border-secondary {
+    border-color: var(--border-color) !important;
+}
+.text-emerald {
+    color: var(--color-emerald) !important;
+}
+.bg-emerald {
+    background-color: var(--color-emerald) !important;
+}
+.text-rose {
+    color: var(--color-rose) !important;
+}
+.bg-rose {
+    background-color: var(--color-rose) !important;
+}
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+/* Card Glow Hover Effects */
+.card-premium {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+.card-premium:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-focus);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.35);
+}
+
+.card-glow-emerald:hover {
+    box-shadow: 0 8px 30px -10px var(--color-emerald-glow);
+    border-color: rgba(185, 168, 16, 0.4);
+}
+.card-glow-rose:hover {
+    box-shadow: 0 8px 30px -10px var(--color-rose-glow);
+    border-color: rgba(244, 63, 94, 0.4);
+}
+.card-glow-primary:hover {
+    box-shadow: 0 8px 30px -10px var(--color-primary-glow);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* ----------------------------------------------------
+   Responsive Sidebar System
+---------------------------------------------------- */
+.sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transition: var(--transition-smooth);
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        width: 280px;
+        z-index: 1040;
+    }
+    .sidebar.show {
+        left: 0;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Nav Link Hovering styling */
+.sidebar .nav-link {
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    transition: var(--transition-smooth);
+}
+.sidebar .nav-link:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff !important;
+}
+
+/* ----------------------------------------------------
+   Inputs & Form Customizations (Bootstrap Override)
+---------------------------------------------------- */
+.form-control, .form-select {
+    background-color: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    transition: var(--transition-smooth);
+}
+.form-control:focus, .form-select:focus {
+    background-color: var(--bg-darker);
+    border-color: var(--color-primary);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.25rem var(--color-primary-glow);
+}
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+.input-group-text {
+    background-color: var(--border-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+.modal-header, .modal-footer {
+    border-color: var(--border-color);
+}
+.modal-title {
+    font-family: var(--font-outfit);
+    font-weight: 600;
+}
+
+/* ----------------------------------------------------
+   Buttons & Micro-interactions
+---------------------------------------------------- */
+.btn-emerald {
+    background-color: var(--color-emerald);
+    color: #19180b;
+    font-weight: 600;
+    border: none;
+    transition: var(--transition-smooth);
+}
+.btn-emerald:hover, .btn-emerald:focus {
+    background-color: var(--color-emerald-hover);
+    color: #0b0f19;
+    box-shadow: 0 0 15px var(--color-emerald-glow);
+}
+
+.btn-primary {
+    background-color: var(--color-primary) !important;
+    border: none !important;
+}
+.btn-primary:hover {
+    background-color: var(--color-primary-hover) !important;
+}
+
+/* ----------------------------------------------------
+   Fintech Table Styling
+---------------------------------------------------- */
+.table-premium {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+.table-premium th {
+    background-color: var(--bg-darker);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.table-premium td {
+    padding: 1rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+.table-premium tr:last-child td {
+    border-bottom: none;
+}
+.table-premium tbody tr {
+    transition: var(--transition-smooth);
+}
+.table-premium tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ----------------------------------------------------
+   Budget Alert Progress Animation
+---------------------------------------------------- */
+.progress {
+    background-color: var(--bg-darker) !important;
+    height: 8px;
+    border-radius: 10px;
+    overflow: visible;
+}
+.progress-bar-glow-emerald {
+    background-color: var(--color-emerald);
+    box-shadow: 0 0 8px var(--color-emerald);
+}
+.progress-bar-glow-warning {
+    background-color: var(--color-amber);
+    box-shadow: 0 0 8px var(--color-amber);
+}
+.progress-bar-glow-danger {
+    background-color: var(--color-rose);
+    box-shadow: 0 0 8px var(--color-rose);
+    animation: pulse-danger 1.5s infinite;
+}
+
+@keyframes pulse-danger {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* ----------------------------------------------------
+   Glassmorphism Hero & landing
+---------------------------------------------------- */
+.landing-hero {
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent),
+                radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.08), transparent);
+}
+.glass-card {
+    background: rgba(18, 24, 36, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
